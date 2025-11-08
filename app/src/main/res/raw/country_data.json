@@ -1,0 +1,31 @@
+{
+  "countries": [
+    {
+      "name": "France",
+      "capital": "Paris",
+      "coordinates": {
+        "latitude": 48.8566,
+        "longitude": 2.3522
+      },
+      "outline": "M 2.0,1.0 L 3.0,1.5 L 3.5,2.0 L 3.0,2.5 L 2.5,2.0 L 2.0,1.5 Z"
+    },
+    {
+      "name": "Germany",
+      "capital": "Berlin",
+      "coordinates": {
+        "latitude": 52.5200,
+        "longitude": 13.4050
+      },
+      "outline": "M 1.0,1.0 L 2.0,1.5 L 2.5,2.0 L 2.0,2.5 L 1.5,2.0 L 1.0,1.5 Z"
+    },
+    {
+      "name": "Italy",
+      "capital": "Rome",
+      "coordinates": {
+        "latitude": 41.9028,
+        "longitude": 12.4964
+      },
+      "outline": "M 1.5,1.0 L 2.5,1.5 L 3.0,2.0 L 2.5,2.5 L 2.0,2.0 L 1.5,1.5 Z"
+    }
+  ]
+}
