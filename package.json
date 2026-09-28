@@ -16,7 +16,8 @@
     "fix": "biome check --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "pnpm lint && pnpm typecheck && pnpm test"
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "data:countries": "node scripts/build-countries.mjs"
   },
   "dependencies": {
     "maplibre-gl": "^6.11.2",
@@ -43,6 +44,7 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "^8.3.1",
-    "vitest": "^5.0.2"
+    "vitest": "^5.0.2",
+    "world-countries": "^5.1.0"
   }
 }

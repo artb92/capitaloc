@@ -16,7 +16,8 @@ export default defineConfig({
   // maplibre-gl is ~1 MB minified on its own and already lands in a separate chunk.
   build: { chunkSizeWarningLimit: 1200 },
   test: {
-    environment: "jsdom",
+    // Pure logic runs in node (fast); component tests opt in with `// @vitest-environment jsdom`.
+    environment: "node",
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
     css: false,

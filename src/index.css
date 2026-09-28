@@ -1,14 +1,21 @@
 @import "tailwindcss";
-
-@theme {
-  --color-ocean: #dbeafe;
-  --color-land: #f8fafc;
-  --color-border: #94a3b8;
-  --color-accent: #e11d48;
-}
-
 html,
 body,
 #root {
   height: 100%;
+}
+
+@keyframes ping-once {
+  from {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@utility animate-ping-once {
+  animation: ping-once 300ms ease-out;
 }

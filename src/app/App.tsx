@@ -1,14 +1,58 @@
+import { computeStats } from "@/features/game/history";
+import { ROUND_MS } from "@/features/game/logic";
+import { useGame } from "@/features/game/store";
 import { WorldMap } from "@/features/map/WorldMap";
+import { Countdown } from "./Countdown";
+import { Header } from "./Header";
+import { HomeScreen } from "./HomeScreen";
+import { ResultsScreen } from "./ResultsScreen";
+import { RoundHud } from "./RoundHud";
+import { useNow } from "./useNow";
 
 export function App() {
+  const { puzzle, game, history, start, pin, tick } = useGame();
+  const running = game.phase === "countdown" || game.phase === "playing" || game.phase === "reveal";
+  const now = useNow(running, tick);
+
+  const today = history[puzzle.key];
+  const inRound = game.phase === "playing" || game.phase === "reveal";
+  const country = inRound ? puzzle.countries[game.round] : undefined;
+  const result = game.phase === "reveal" ? (game.guesses[game.round] ?? null) : null;
+
   return (
     <main className="flex h-full flex-col bg-slate-50 text-slate-900">
-      <header className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
-        <h1 className="font-semibold text-lg tracking-tight">Capitaloc</h1>
-        <span className="text-slate-500 text-sm">Setup preview</span>
-      </header>
-      <div className="relative flex-1">
-        <WorldMap />
+      <Header puzzle={puzzle.number} />
+      <div className="relative flex-1 overflow-hidden">
+        <WorldMap
+          focusId={country?.id ?? null}
+          focusInclude={country?.lngLat}
+          pin={result?.lngLat ?? null}
+          answer={result ? (country?.lngLat ?? null) : null}
+          onPick={game.phase === "playing" ? pin : undefined}
+        />
+        {game.phase === "countdown" && (
+          <Countdown seconds={Math.max(1, Math.ceil((game.endsAt - now) / 1000))} />
+        )}
+        {country && (
+          <RoundHud
+            round={game.round}
+            rounds={puzzle.countries.length}
+            country={country}
+            timeLeft={game.phase === "playing" ? Math.max(0, (game.endsAt - now) / ROUND_MS) : null}
+            result={result}
+          />
+        )}
+        {!running &&
+          (today ? (
+            <ResultsScreen
+              result={today}
+              countries={puzzle.countries}
+              stats={computeStats(history, puzzle.key)}
+              now={now}
+            />
+          ) : (
+            <HomeScreen onStart={start} />
+          ))}
       </div>
     </main>
   );
