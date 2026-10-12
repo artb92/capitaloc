@@ -1,17 +1,27 @@
 import type { StyleSpecification } from "maplibre-gl";
+import type { Basemap } from "./basemap";
 import { countries } from "./countries";
 import { deep, ice, lakes, rivers, sea } from "./physical";
-import { RELIEF_MAX_Z } from "./relief";
+import { TILES_MAX_Z, tileUrl } from "./tiles";
 
 const WATER = "#3f7896";
 const SEA = "#2b5673";
 /** Lowland colour of the relief tiles, shown for the instant before a tile is decoded. */
 const LAND = "#a9bf8f";
-// Tiles are fetched by MapLibre's worker, which needs an absolute URL.
-const ORIGIN = globalThis.location?.origin ?? "";
 
 export const TERRAIN_ATTRIBUTION =
   '<a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noreferrer">Terrain: Mapzen, AWS, SRTM, GMTED, ETOPO1</a> · <a href="https://www.naturalearthdata.com" target="_blank" rel="noreferrer">Natural Earth</a>';
+
+/**
+ * Empty layer marking where the country highlight goes (under water and borders). Same id in
+ * every style, so switching styles never points the highlight at a missing layer.
+ */
+export const HIGHLIGHT_ANCHOR = "highlight-anchor";
+const anchor = {
+  id: HIGHLIGHT_ANCHOR,
+  type: "background",
+  paint: { "background-opacity": 0 },
+} as const;
 
 /**
  * Physical map: shaded relief tiles prebuilt into public/relief (scripts/build-relief.mjs),
@@ -19,14 +29,14 @@ export const TERRAIN_ATTRIBUTION =
  * vectors drawn on top, so coasts line up with the country shapes. No labels, roads or
  * cities: they would give answers away.
  */
-export const mapStyle: StyleSpecification = {
+const reliefStyle: StyleSpecification = {
   version: 8,
   sources: {
     relief: {
       type: "raster",
-      tiles: [`${ORIGIN}${import.meta.env.BASE_URL}relief/{z}/{x}/{y}.webp`],
+      tiles: [tileUrl("relief")],
       tileSize: 256,
-      maxzoom: RELIEF_MAX_Z,
+      maxzoom: TILES_MAX_Z,
       attribution: TERRAIN_ATTRIBUTION,
     },
     countries: { type: "geojson", data: countries },
@@ -41,6 +51,7 @@ export const mapStyle: StyleSpecification = {
     { id: "relief", type: "raster", source: "relief", paint: { "raster-fade-duration": 0 } },
     { id: "sea", type: "fill", source: "sea", paint: { "fill-color": SEA } },
     { id: "deep", type: "fill", source: "deep", paint: { "fill-color": "#1d3f58" } },
+    anchor,
     {
       id: "ice",
       type: "fill",
@@ -82,4 +93,51 @@ export const mapStyle: StyleSpecification = {
       },
     },
   ],
+};
+
+const SATELLITE_ATTRIBUTION =
+  '<a href="https://earthobservatory.nasa.gov/features/BlueMarble" target="_blank" rel="noreferrer">Imagery: NASA Blue Marble</a> via <a href="https://www.npmjs.com/package/@freetiler/nasa-bluemarble" target="_blank" rel="noreferrer">FreeTiler</a> · <a href="https://www.naturalearthdata.com" target="_blank" rel="noreferrer">Natural Earth</a>';
+
+/**
+ * Cloud-free satellite imagery (NASA Blue Marble, prebuilt into public/satellite by
+ * scripts/build-satellite.mjs) with only country borders on top.
+ */
+const satelliteStyle: StyleSpecification = {
+  version: 8,
+  sources: {
+    satellite: {
+      type: "raster",
+      tiles: [tileUrl("satellite")],
+      tileSize: 256,
+      maxzoom: TILES_MAX_Z,
+      attribution: SATELLITE_ATTRIBUTION,
+    },
+    countries: { type: "geojson", data: countries },
+  },
+  layers: [
+    { id: "ocean", type: "background", paint: { "background-color": "#0e2f5c" } },
+    {
+      id: "satellite",
+      type: "raster",
+      source: "satellite",
+      paint: { "raster-fade-duration": 0 },
+    },
+    anchor,
+    {
+      id: "borders",
+      type: "line",
+      source: "countries",
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": "#ffffff",
+        "line-opacity": 0.45,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 1, 0.4, 6, 1.1],
+      },
+    },
+  ],
+};
+
+export const mapStyles: Record<Basemap, StyleSpecification> = {
+  relief: reliefStyle,
+  satellite: satelliteStyle,
 };

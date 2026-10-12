@@ -16,7 +16,8 @@ Zustand (game state) · Vitest + Testing Library · Biome (lint + format) · pnp
 - `pnpm data:countries`: regenerate `src/data/countries.json` (downloads Natural Earth)
 - `pnpm data:physical`: regenerate `src/data/physical.json` (sea, lakes, ice, rivers, deep ocean)
 - `pnpm data:relief`: regenerate `public/relief/` shaded-relief tiles z0–6 (downloads ~4k terrain tiles)
-- Dev builds show a "Reset (dev)" button in the header to replay today
+- `pnpm data:satellite`: regenerate `public/satellite/` tiles z0–6 (NASA Blue Marble, ~120 MB download)
+- Dev builds show "Map: …" (switch satellite/relief base map) and "Reset (dev)" (replay today) in the header
 
 ## Layout
 - `src/app/`: app shell, screens
@@ -34,8 +35,10 @@ Zustand (game state) · Vitest + Testing Library · Biome (lint + format) · pnp
   tests add `// @vitest-environment jsdom` on line 1.
 - Every user-facing string goes through `useI18n()` in both languages.
 - Map style is label-free (`features/map/mapStyle.ts`): never add a tile source with place
-  names, roads or cities, it would reveal answers. Everything is self-hosted: relief tiles in
-  `public/relief/`, sea/lakes/rivers vectors drawn over them so coasts match country shapes.
+  names, roads or cities, it would reveal answers. Everything is self-hosted. Two base maps
+  (`features/map/basemap.ts`, default satellite): satellite tiles in `public/satellite/`, or relief
+  tiles in `public/relief/` with sea/lakes/rivers vectors drawn over them. The country highlight
+  sits under the shared `highlight-anchor` layer, which every style must keep.
 - Named exports only; no default exports except where a tool requires one.
 - Conventional commits (`feat:`, `fix:`, `chore:` …).
 

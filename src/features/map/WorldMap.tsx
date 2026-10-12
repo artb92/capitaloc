@@ -3,8 +3,9 @@ import type { FeatureCollection, LineString } from "geojson";
 import { useEffect, useMemo, useRef } from "react";
 import { Layer, Map as MapLibre, type MapRef, Marker, Source } from "react-map-gl/maplibre";
 import type { LngLat } from "@/lib/geo";
+import { useBasemap } from "./basemap";
 import { countryBounds } from "./countries";
-import { mapStyle } from "./mapStyle";
+import { HIGHLIGHT_ANCHOR, mapStyles } from "./mapStyle";
 
 const WORLD_VIEW = { center: [10, 25] as [number, number], zoom: 1.2 };
 const ACCENT = "#f0a830";
@@ -23,6 +24,7 @@ type Props = {
 
 export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick }: Props) {
   const mapRef = useRef<MapRef>(null);
+  const basemap = useBasemap((s) => s.basemap);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -80,7 +82,7 @@ export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick 
         latitude: WORLD_VIEW.center[1],
         zoom: WORLD_VIEW.zoom,
       }}
-      mapStyle={mapStyle}
+      mapStyle={mapStyles[basemap]}
       style={{ position: "absolute", inset: 0 }}
       cursor={onPick ? "crosshair" : "grab"}
       dragRotate={false}
@@ -102,7 +104,7 @@ export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick 
         id="highlight"
         type="fill"
         source="countries"
-        beforeId="ice"
+        beforeId={HIGHLIGHT_ANCHOR}
         filter={["==", ["get", "id"], focusId ?? ""]}
         paint={{ "fill-color": ACCENT, "fill-opacity": 0.35 }}
       />

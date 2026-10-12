@@ -3,8 +3,9 @@ import { fetchPhoto } from "@/features/game/capitalPhoto";
 import { computeStats } from "@/features/game/history";
 import { ROUND_MS, TRAVEL_MS } from "@/features/game/logic";
 import { useGame } from "@/features/game/store";
+import { useBasemap } from "@/features/map/basemap";
 import { countryBounds } from "@/features/map/countries";
-import { preloadRelief } from "@/features/map/relief";
+import { preloadTiles } from "@/features/map/tiles";
 import { WorldMap } from "@/features/map/WorldMap";
 import { Countdown } from "./Countdown";
 import { Header } from "./Header";
@@ -15,6 +16,7 @@ import { useNow } from "./useNow";
 
 export function App() {
   const { puzzle, game, history, start, pin, tick, resetToday } = useGame();
+  const { basemap, toggle: toggleBasemap } = useBasemap();
   const running = game.phase === "countdown" || game.phase === "playing" || game.phase === "reveal";
   const now = useNow(running, tick);
 
@@ -28,9 +30,9 @@ export function App() {
   useEffect(() => {
     for (const c of puzzle.countries) {
       const bounds = countryBounds(c.id, c.lngLat);
-      if (bounds) preloadRelief(bounds);
+      if (bounds) preloadTiles(basemap, bounds);
     }
-  }, [puzzle.countries]);
+  }, [basemap, puzzle.countries]);
 
   const today = history[puzzle.key];
   const inRound = game.phase === "playing" || game.phase === "reveal";
@@ -39,7 +41,14 @@ export function App() {
 
   return (
     <main className="flex h-full flex-col bg-ink-950 text-ink-900">
-      <Header puzzle={puzzle.number} onDevReset={import.meta.env.DEV ? resetToday : undefined} />
+      <Header
+        puzzle={puzzle.number}
+        dev={
+          import.meta.env.DEV
+            ? { onReset: resetToday, basemap, onToggleBasemap: toggleBasemap }
+            : undefined
+        }
+      />
       <div className="relative flex-1 overflow-hidden">
         <WorldMap
           focusId={country?.id ?? null}
