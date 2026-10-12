@@ -3,6 +3,8 @@ import { fetchPhoto } from "@/features/game/capitalPhoto";
 import { computeStats } from "@/features/game/history";
 import { ROUND_MS, TRAVEL_MS } from "@/features/game/logic";
 import { useGame } from "@/features/game/store";
+import { countryBounds } from "@/features/map/countries";
+import { preloadRelief } from "@/features/map/relief";
 import { WorldMap } from "@/features/map/WorldMap";
 import { Countdown } from "./Countdown";
 import { Header } from "./Header";
@@ -21,6 +23,14 @@ export function App() {
     if (game.phase !== "countdown") return;
     for (const c of puzzle.countries) if (c.capitalWikidata) fetchPhoto(c.capitalWikidata);
   }, [game.phase, puzzle.countries]);
+
+  // Map tiles are small and same-origin: warm today's close-ups as soon as the page opens.
+  useEffect(() => {
+    for (const c of puzzle.countries) {
+      const bounds = countryBounds(c.id, c.lngLat);
+      if (bounds) preloadRelief(bounds);
+    }
+  }, [puzzle.countries]);
 
   const today = history[puzzle.key];
   const inRound = game.phase === "playing" || game.phase === "reveal";

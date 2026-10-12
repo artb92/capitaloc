@@ -20,3 +20,4 @@ One line per decision, newest last. Format: `YYYY-MM-DD: decision (why)`.
 - 2026-10-12: Brand: white pin with an amber star (the map symbol for a capital) on ink blue; Bricolage Grotesque for all text.
 - 2026-10-12: Physical base map per Arthur: elevation colours, hill shading and sea depth from AWS Open Data terrain tiles (Mapzen terrarium, no key), Natural Earth rivers. Political pastel tints and graticule removed. Bundled land/deep-sea layers remain as fallback if tiles fail.
 - 2026-10-12: Map input is blocked during the countdown and camera flight; a press used to stop the flight and leave the first country unzoomed.
+- 2026-10-12: Relief is self-hosted per Arthur ("must load instantly", "polygon not matching"): shaded-relief WebP tiles z0–6 prebuilt into `public/relief` (~9 MB, ~1–2 kB per tile), today's close-ups preloaded on page open. Sea is a Natural Earth 50m vector drawn over the relief, so coasts match the country shapes; lakes and rivers from NE 10m.

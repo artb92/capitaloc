@@ -14,7 +14,7 @@ export default defineConfig({
   server: { port: 5173, strictPort: true, open: false },
   preview: { port: 4173, strictPort: true },
   // maplibre-gl is ~1 MB minified on its own and already lands in a separate chunk.
-  build: { chunkSizeWarningLimit: 1200 },
+  build: { chunkSizeWarningLimit: 2600 },
   test: {
     // Pure logic runs in node (fast); component tests opt in with `// @vitest-environment jsdom`.
     environment: "node",
