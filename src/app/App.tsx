@@ -39,6 +39,10 @@ export function App() {
           answer={result ? (country?.lngLat ?? null) : null}
           onPick={game.phase === "playing" ? pin : undefined}
         />
+        {/* Blocks the map during the camera flight: a press would stop the flight mid-way. */}
+        {(game.phase === "countdown" || (game.phase === "playing" && now < game.startsAt)) && (
+          <div className="absolute inset-0 z-[5]" />
+        )}
         {game.phase === "countdown" && (
           <Countdown seconds={Math.max(1, Math.ceil((game.endsAt - now) / 1000))} />
         )}

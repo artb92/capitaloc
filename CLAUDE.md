@@ -14,7 +14,7 @@ Zustand (game state) · Vitest + Testing Library · Biome (lint + format) · pnp
 - `pnpm test -- <pattern>`: run a subset of tests
 - `pnpm build` / `pnpm preview` (http://localhost:4173)
 - `pnpm data:countries`: regenerate `src/data/countries.json` (downloads Natural Earth)
-- `pnpm data:physical`: regenerate `src/data/physical.json` (lakes, ice, deep ocean)
+- `pnpm data:physical`: regenerate `src/data/physical.json` (lakes, ice, rivers, deep ocean)
 - Dev builds show a "Reset (dev)" button in the header to replay today
 
 ## Layout
@@ -32,15 +32,16 @@ Zustand (game state) · Vitest + Testing Library · Biome (lint + format) · pnp
 - Unit-test every pure function; no snapshot tests. Tests run in node by default; component
   tests add `// @vitest-environment jsdom` on line 1.
 - Every user-facing string goes through `useI18n()` in both languages.
-- Map style is self-contained and label-free (`features/map/mapStyle.ts`): never add a
-  tile source with place names, it would reveal answers.
+- Map style is label-free (`features/map/mapStyle.ts`): never add a tile source with place
+  names, roads or cities, it would reveal answers. Only the terrain DEM tiles are remote.
 - Named exports only; no default exports except where a tool requires one.
 - Conventional commits (`feat:`, `fix:`, `chore:` …).
 
 ## Gotchas
 - `maplibre-gl` v6 must stay in `optimizeDeps.exclude` (vite.config.ts) or its worker fails to load.
 - Capital photos come from Wikimedia at runtime; this sandbox cannot reach it, so browser tests
-  must stub `wikidata.org` and `commons.wikimedia.org` routes.
+  must stub `wikidata.org` and `commons.wikimedia.org` routes. Headless Chromium here doesn't
+  trust the proxy CA: serve terrain tiles to the page from Node (`NODE_EXTRA_CA_CERTS`).
 - `world-atlas` rings are spherical; `unwrapRing` in `features/map/countries.ts` fixes antimeridian stripes.
 
 ## Design

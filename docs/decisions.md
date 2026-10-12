@@ -18,3 +18,5 @@ One line per decision, newest last. Format: `YYYY-MM-DD: decision (why)`.
 - 2026-10-12: Visual direction "night chart": deep-ocean ink blue (shelf lighter than deep water), soft 5-colour political tints, one accent (amber) for the highlighted country. Replaced the violet→rose gradient, cream land and region blobs. No rivers, roads, cities or labels (they would hint at capitals).
 - 2026-10-12: Score colours are data: green ≥ 750, amber ≥ 300, red > 0, grey = no answer (`src/app/tier.ts`).
 - 2026-10-12: Brand: white pin with an amber star (the map symbol for a capital) on ink blue; Bricolage Grotesque for all text.
+- 2026-10-12: Physical base map per Arthur: elevation colours, hill shading and sea depth from AWS Open Data terrain tiles (Mapzen terrarium, no key), Natural Earth rivers. Political pastel tints and graticule removed. Bundled land/deep-sea layers remain as fallback if tiles fail.
+- 2026-10-12: Map input is blocked during the countdown and camera flight; a press used to stop the flight and leave the first country unzoomed.

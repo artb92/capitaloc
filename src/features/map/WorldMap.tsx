@@ -37,7 +37,18 @@ export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick 
           [w, s],
           [e, n],
         ],
-        { ...motion, padding: { top: 280, bottom: 40, left: 40, right: 40 }, maxZoom: 5.5 },
+        {
+          ...motion,
+          // The round card covers the top; on short windows shrink its allowance so the
+          // bounds still fit (fitBounds silently does nothing when padding leaves no room).
+          padding: {
+            top: Math.min(280, map.getContainer().clientHeight * 0.45),
+            bottom: 30,
+            left: 30,
+            right: 30,
+          },
+          maxZoom: 5.5,
+        },
       );
     } else {
       map.flyTo({ ...WORLD_VIEW, ...motion });
@@ -74,7 +85,14 @@ export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick 
       cursor={onPick ? "crosshair" : "grab"}
       dragRotate={false}
       touchPitch={false}
-      attributionControl={false}
+      attributionControl={{ compact: true }}
+      // Start with the credits folded into the (i) button; MapLibre opens them on load.
+      onLoad={(e) =>
+        e.target
+          .getContainer()
+          .querySelector(".maplibregl-ctrl-attrib")
+          ?.classList.remove("maplibregl-compact-show")
+      }
       onClick={(e) => {
         const { lng, lat } = e.lngLat.wrap();
         onPick?.([lng, lat]);
@@ -86,7 +104,7 @@ export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick 
         source="countries"
         beforeId="ice"
         filter={["==", ["get", "id"], focusId ?? ""]}
-        paint={{ "fill-color": ACCENT, "fill-opacity": 0.5 }}
+        paint={{ "fill-color": ACCENT, "fill-opacity": 0.35 }}
       />
       <Layer
         id="highlight-glow"

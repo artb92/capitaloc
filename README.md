@@ -31,6 +31,6 @@ Then open **http://localhost:5173**. The page hot-reloads as code changes.
 Vite, React 19, TypeScript, MapLibre GL (`react-map-gl`), Tailwind CSS v4, Zustand, Vitest, Biome.
 Map data: Natural Earth 1:110m via `world-atlas`.
 
-Country data: [world-countries](https://github.com/mledoze/countries) (ODbL) and [Natural Earth](https://www.naturalearthdata.com/) populated places and physical layers (public domain). Capital photos: [Wikimedia Commons](https://commons.wikimedia.org/) via Wikidata, credited on each photo, regenerated with `pnpm data:countries`.
+Country data: [world-countries](https://github.com/mledoze/countries) (ODbL) and [Natural Earth](https://www.naturalearthdata.com/) populated places and physical layers (public domain). Terrain: [AWS Open Data Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) (Mapzen; SRTM, GMTED, ETOPO1 and others), credited on the map. Capital photos: [Wikimedia Commons](https://commons.wikimedia.org/) via Wikidata, credited on each photo, regenerated with `pnpm data:countries`.
 
 See [CLAUDE.md](CLAUDE.md) for conventions and [docs/decisions.md](docs/decisions.md) for design decisions.

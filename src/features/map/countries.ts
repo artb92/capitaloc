@@ -1,5 +1,5 @@
 import type { FeatureCollection, MultiPolygon, Polygon, Position } from "geojson";
-import { feature, neighbors } from "topojson-client";
+import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import world from "world-atlas/countries-50m.json";
 
@@ -35,22 +35,6 @@ function unwrapGeometry(geometry: Polygon | MultiPolygon): Polygon | MultiPolygo
 
 const topology = world as unknown as CountryTopology;
 
-/** Greedy map colouring (most-connected first): adjacent countries get different colours. */
-export function colorIndexes(adjacency: number[][], colors = 5): number[] {
-  const result = adjacency.map(() => -1);
-  const order = adjacency
-    .map((_, i) => i)
-    .sort((a, b) => (adjacency[b]?.length ?? 0) - (adjacency[a]?.length ?? 0));
-  for (const i of order) {
-    const taken = new Set((adjacency[i] ?? []).map((j) => result[j]));
-    let c = 0;
-    while (taken.has(c) && c < colors - 1) c++;
-    result[i] = c;
-  }
-  return result;
-}
-
-const colors = colorIndexes(neighbors(topology.objects.countries.geometries));
 const raw = feature(topology, topology.objects.countries) as FeatureCollection<
   Polygon | MultiPolygon,
   CountryProps
@@ -59,10 +43,10 @@ const raw = feature(topology, topology.objects.countries) as FeatureCollection<
 /** Natural Earth 1:50m country polygons, converted once at module load. */
 export const countries: FeatureCollection<Polygon | MultiPolygon, CountryProps> = {
   ...raw,
-  features: raw.features.map((f, i) => ({
+  features: raw.features.map((f) => ({
     ...f,
     // Copy the ISO numeric id into properties: MapLibre drops string feature ids.
-    properties: { ...f.properties, id: String(f.id), color: colors[i] ?? 0 },
+    properties: { ...f.properties, id: String(f.id) },
     geometry: unwrapGeometry(f.geometry),
   })),
 };
