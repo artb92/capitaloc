@@ -91,12 +91,27 @@ export function RoundHud({ round, rounds, country, guesses, timeLeft, result }: 
               </span>
             </div>
           ) : (
-            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-ink-100">
-              <div
-                className={`h-full rounded-full ${timeLeft !== null && timeLeft < 0.3 ? "bg-poor" : "bg-accent"}`}
-                style={{ width: `${(timeLeft ?? 1) * 100}%` }}
-              />
-            </div>
+            <>
+              <p
+                key={`cta-${round}`}
+                className="mt-1 flex items-center gap-1.5 font-semibold text-accent-dark text-sm motion-safe:animate-rise"
+              >
+                <svg viewBox="15 10 34 48" className="h-4 w-3 shrink-0" aria-hidden="true">
+                  <path
+                    d="M32 56s-15-14.6-15-29a15 15 0 0 1 30 0c0 14.4-15 29-15 29z"
+                    fill="currentColor"
+                  />
+                  <circle cx="32" cy="27" r="5.5" fill="#fff" />
+                </svg>
+                {t.pinpoint}
+              </p>
+              <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-ink-100">
+                <div
+                  className={`h-full rounded-full ${timeLeft !== null && timeLeft < 0.3 ? "bg-poor" : "bg-accent"}`}
+                  style={{ width: `${(timeLeft ?? 1) * 100}%` }}
+                />
+              </div>
+            </>
           )}
         </div>
       </section>
