@@ -8,14 +8,14 @@ describe("HomeScreen", () => {
     useLang.setState({ lang: "en" });
     const onStart = vi.fn();
     render(<HomeScreen onStart={onStart} />);
-    expect(screen.getByText(/5 seconds/)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect(screen.getByText(/capital is/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Start today's challenge" }));
     expect(onStart).toHaveBeenCalledOnce();
   });
 
   it("switches to French", () => {
     useLang.setState({ lang: "fr" });
     render(<HomeScreen onStart={() => {}} />);
-    expect(screen.getByRole("button", { name: "Commencer" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Lancer le défi du jour" })).toBeInTheDocument();
   });
 });

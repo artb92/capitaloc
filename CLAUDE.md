@@ -14,7 +14,7 @@ Zustand (game state) · Vitest + Testing Library · Biome (lint + format) · pnp
 - `pnpm test -- <pattern>`: run a subset of tests
 - `pnpm build` / `pnpm preview` (http://localhost:4173)
 - `pnpm data:countries`: regenerate `src/data/countries.json` (downloads Natural Earth)
-- `pnpm data:physical`: regenerate `src/data/physical.json` (lakes, ice, deserts, mountains)
+- `pnpm data:physical`: regenerate `src/data/physical.json` (lakes, ice, deep ocean)
 - Dev builds show a "Reset (dev)" button in the header to replay today
 
 ## Layout
@@ -42,6 +42,10 @@ Zustand (game state) · Vitest + Testing Library · Biome (lint + format) · pnp
 - Capital photos come from Wikimedia at runtime; this sandbox cannot reach it, so browser tests
   must stub `wikidata.org` and `commons.wikimedia.org` routes.
 - `world-atlas` rings are spherical; `unwrapRing` in `features/map/countries.ts` fixes antimeridian stripes.
+
+## Design
+Colours and animations are Tailwind v4 theme tokens in `src/index.css` (ink scale, one `accent`,
+score tiers). Use them, not raw hex. Animations use `motion-safe:` so reduced motion is respected.
 
 ## Product decisions
 See `docs/decisions.md` (scoring formula, timings, country pool…). Read it before changing gameplay.

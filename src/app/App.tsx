@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { fetchPhoto } from "@/features/game/capitalPhoto";
 import { computeStats } from "@/features/game/history";
-import { ROUND_MS } from "@/features/game/logic";
+import { ROUND_MS, TRAVEL_MS } from "@/features/game/logic";
 import { useGame } from "@/features/game/store";
 import { WorldMap } from "@/features/map/WorldMap";
 import { Countdown } from "./Countdown";
@@ -28,12 +28,13 @@ export function App() {
   const result = game.phase === "reveal" ? (game.guesses[game.round] ?? null) : null;
 
   return (
-    <main className="flex h-full flex-col bg-slate-50 text-slate-900">
+    <main className="flex h-full flex-col bg-ink-950 text-ink-900">
       <Header puzzle={puzzle.number} onDevReset={import.meta.env.DEV ? resetToday : undefined} />
       <div className="relative flex-1 overflow-hidden">
         <WorldMap
           focusId={country?.id ?? null}
           focusInclude={country?.lngLat}
+          travelMs={TRAVEL_MS}
           pin={result?.lngLat ?? null}
           answer={result ? (country?.lngLat ?? null) : null}
           onPick={game.phase === "playing" ? pin : undefined}
@@ -46,7 +47,12 @@ export function App() {
             round={game.round}
             rounds={puzzle.countries.length}
             country={country}
-            timeLeft={game.phase === "playing" ? Math.max(0, (game.endsAt - now) / ROUND_MS) : null}
+            guesses={game.guesses}
+            timeLeft={
+              game.phase === "playing"
+                ? Math.min(1, Math.max(0, (game.endsAt - now) / ROUND_MS))
+                : null
+            }
             result={result}
           />
         )}

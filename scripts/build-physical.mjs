@@ -1,5 +1,5 @@
 // Builds src/data/physical.json: a TopoJSON of label-free physical features for the base map
-// (lakes, glaciers, deserts, mountain ranges, tundra), from Natural Earth 1:50m.
+// (lakes, glaciers, deep ocean), from Natural Earth.
 // Run: pnpm data:physical
 import { writeFileSync } from "node:fs";
 import mapshaper from "mapshaper";
@@ -12,22 +12,20 @@ const get = async (name) => {
   return (await fetch(`${NE}/${name}.geojson`)).text();
 };
 
-// Regions keep only the classes that read as terrain texture; names are dropped (no clues).
-const KINDS = { Desert: "desert", "Range/mtn": "mountains", Tundra: "tundra" };
-
 const input = {
   "lakes.json": await get("ne_50m_lakes"),
   "ice.json": await get("ne_50m_glaciated_areas"),
-  "regions.json": await get("ne_50m_geography_regions_polys"),
+  // Ocean deeper than 200 m; shallower water (the continental shelf) stays a lighter band.
+  "deep.json": await get("ne_10m_bathymetry_K_200"),
 };
 
 const cmd = [
-  "-i lakes.json ice.json regions.json combine-files",
-  `-filter target=regions '${JSON.stringify(Object.keys(KINDS))}.includes(FEATURECLA)'`,
-  `-each target=regions 'kind = (${JSON.stringify(KINDS)})[FEATURECLA]'`,
-  "-filter-fields target=regions kind",
-  "-filter-fields target=lakes,ice ''",
-  "-simplify 25% keep-shapes target=*",
+  "-i lakes.json ice.json deep.json combine-files",
+  "-filter-fields target=* ''",
+  "-simplify 25% keep-shapes target=lakes,ice",
+  // Deep water only needs its outline at world zooms; drop specks too small to see.
+  "-simplify 3% target=deep",
+  "-filter-islands min-area=500km2 target=deep",
   "-o format=topojson quantization=1e5 physical.json target=*",
 ].join(" ");
 

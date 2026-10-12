@@ -5,19 +5,25 @@ export function HomeScreen({ onStart }: { onStart: () => void }) {
   const { t } = useI18n();
   return (
     <Card>
-      <p className="text-center font-display font-bold text-2xl tracking-tight">{t.tagline}</p>
-      <h2 className="mt-5 font-medium text-slate-500 text-sm uppercase tracking-wide">
-        {t.howToPlay}
+      <h2 className="text-balance font-extrabold text-4xl leading-none tracking-tight">
+        {t.title}
       </h2>
-      <ol className="mt-2 list-decimal space-y-1.5 pl-5 text-slate-700">
-        {t.rules.map((rule) => (
-          <li key={rule}>{rule}</li>
+      <p className="mt-2 text-ink-500 text-lg">{t.subtitle}</p>
+      <h3 className="mt-7 font-semibold text-ink-900 text-sm">{t.howToPlay}</h3>
+      <ol className="mt-3 space-y-3">
+        {t.rules.map((rule, i) => (
+          <li key={rule} className="flex gap-3 text-ink-700 leading-snug">
+            <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-ink-100 font-semibold text-ink-900 text-xs">
+              {i + 1}
+            </span>
+            <span className="text-pretty">{rule}</span>
+          </li>
         ))}
       </ol>
       <button
         type="button"
         onClick={onStart}
-        className="mt-6 w-full rounded-xl bg-gradient-to-r from-violet-600 to-rose-500 py-3 font-display font-bold text-lg text-white shadow-lg shadow-rose-500/25 transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-rose-600 focus-visible:outline-offset-2"
+        className="mt-8 w-full rounded-xl bg-accent py-3.5 font-bold text-ink-950 text-lg shadow-[0_10px_30px_-10px_rgb(240_168_48/0.8)] transition hover:brightness-105 focus-visible:outline-2 focus-visible:outline-accent-dark focus-visible:outline-offset-2 active:scale-[0.98]"
       >
         {t.start}
       </button>

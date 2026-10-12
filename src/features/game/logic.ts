@@ -2,7 +2,9 @@ import { distanceKm, type LngLat } from "@/lib/geo";
 import { roundScore, speedFactor } from "@/lib/scoring";
 import type { Country } from "./countries";
 
-export const COUNTDOWN_MS = 5000;
+export const COUNTDOWN_MS = 3000;
+/** Camera flight to the next country; the round timer starts after it so travel is free. */
+export const TRAVEL_MS = 900;
 export const ROUND_MS = 5000;
 export const REVEAL_MS = 2500;
 
@@ -20,22 +22,35 @@ export type GameState = {
   phase: Phase;
   /** Index of the current round (0-based). */
   round: number;
+  /** Epoch ms when the round timer starts (after the camera travel). Only used while playing. */
+  startsAt: number;
   /** Epoch ms when the current timed phase ends. */
   endsAt: number;
   guesses: Guess[];
 };
 
-export const initialGame: GameState = { phase: "idle", round: 0, endsAt: 0, guesses: [] };
+export const initialGame: GameState = {
+  phase: "idle",
+  round: 0,
+  startsAt: 0,
+  endsAt: 0,
+  guesses: [],
+};
 
 export function start(now: number): GameState {
-  return { phase: "countdown", round: 0, endsAt: now + COUNTDOWN_MS, guesses: [] };
+  return { ...initialGame, phase: "countdown", endsAt: now + COUNTDOWN_MS };
+}
+
+function play(state: GameState, round: number, now: number): GameState {
+  const startsAt = now + TRAVEL_MS;
+  return { ...state, phase: "playing", round, startsAt, endsAt: startsAt + ROUND_MS };
 }
 
 function reveal(state: GameState, guess: Guess, now: number): GameState {
   return { ...state, phase: "reveal", endsAt: now + REVEAL_MS, guesses: [...state.guesses, guess] };
 }
 
-/** The player pinned a point. Only counts while a round is running. */
+/** The player pinned a point. Only counts while the round timer runs. */
 export function guess(
   state: GameState,
   lngLat: LngLat,
@@ -43,9 +58,11 @@ export function guess(
   now: number,
 ): GameState {
   const country = countries[state.round];
-  if (state.phase !== "playing" || !country || now >= state.endsAt) return state;
+  if (state.phase !== "playing" || !country || now < state.startsAt || now >= state.endsAt) {
+    return state;
+  }
   const d = distanceKm(lngLat, country.lngLat);
-  const timeMs = now - (state.endsAt - ROUND_MS);
+  const timeMs = now - state.startsAt;
   const score = Math.round(roundScore(d, country.areaKm2) * speedFactor(timeMs, ROUND_MS));
   return reveal(state, { lngLat, distanceKm: d, score, timeMs }, now);
 }
@@ -55,12 +72,12 @@ export function tick(state: GameState, countries: readonly Country[], now: numbe
   if (now < state.endsAt) return state;
   switch (state.phase) {
     case "countdown":
-      return { ...state, phase: "playing", endsAt: now + ROUND_MS };
+      return play(state, 0, now);
     case "playing":
       return reveal(state, { lngLat: null, distanceKm: null, score: 0, timeMs: null }, now);
     case "reveal":
       return state.round + 1 < countries.length
-        ? { ...state, phase: "playing", round: state.round + 1, endsAt: now + ROUND_MS }
+        ? play(state, state.round + 1, now)
         : { ...state, phase: "done", endsAt: 0 };
     default:
       return state;

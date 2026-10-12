@@ -2,25 +2,54 @@
 @import "@fontsource-variable/bricolage-grotesque";
 
 @theme {
-  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  /* Ink: the deep-ocean blue the map is built around. */
+  --color-ink-950: #0d1e2c;
+  --color-ink-900: #14283a;
+  --color-ink-700: #34495c;
+  --color-ink-500: #5f7282;
+  --color-ink-200: #d3dbe1;
+  --color-ink-100: #e8edf0;
+  /* One accent, the highlighted country. */
+  --color-accent: #f0a830;
+  --color-accent-dark: #b8700a;
+  /* Score tiers (data, not decoration). */
+  --color-great: #2f9e8f;
+  --color-fair: #e5a12e;
+  --color-poor: #d1495b;
+
+  --animate-pin-drop: pin-drop 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --animate-rise: rise 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-pop: pop 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  @keyframes pin-drop {
+    from {
+      transform: translateY(-28px);
+      opacity: 0;
+    }
+  }
+  @keyframes rise {
+    from {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+  }
+  @keyframes pop {
+    from {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
 }
+
 html,
 body,
 #root {
   height: 100%;
 }
 
-@keyframes ping-once {
-  from {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@utility animate-ping-once {
-  animation: ping-once 300ms ease-out;
+body {
+  background: var(--color-ink-950);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
 }
