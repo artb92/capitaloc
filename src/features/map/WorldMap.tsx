@@ -147,24 +147,29 @@ export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick 
         </Marker>
       )}
       {answer && (
-        <Marker longitude={answer[0]} latitude={answer[1]} anchor="center">
-          <span className="relative flex size-8 items-center justify-center">
-            <span className="absolute inset-0 rounded-full bg-white/70 motion-safe:animate-ping" />
-            <svg
-              viewBox="0 0 24 24"
-              className="relative size-6 drop-shadow"
-              aria-label="Capital"
-              role="img"
-            >
-              <path
-                d="M12 2.5l2.8 6.1 6.7.7-5 4.5 1.4 6.6L12 17l-5.9 3.4 1.4-6.6-5-4.5 6.7-.7z"
-                fill="#fff"
-                stroke="#14283a"
-                strokeWidth="1.6"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
+        <Marker longitude={answer[0]} latitude={answer[1]} anchor="bottom">
+          {/* The logo's pin (public/favicon.svg): white so it never reads as the red guess pin. */}
+          <svg
+            width="30"
+            height="42"
+            viewBox="15 10 34 48"
+            aria-label="Capital"
+            role="img"
+            className="motion-safe:animate-pin-drop drop-shadow-md"
+          >
+            <path
+              d="M32 56s-15-14.6-15-29a15 15 0 0 1 30 0c0 14.4-15 29-15 29z"
+              fill="#fff"
+              stroke="#14283a"
+              strokeWidth="1.2"
+            />
+            <path
+              d="M32 18.8l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"
+              className="fill-accent stroke-accent-dark"
+              strokeWidth="1"
+              strokeLinejoin="round"
+            />
+          </svg>
         </Marker>
       )}
     </MapLibre>
