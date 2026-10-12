@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { dailyPick, dateKey, puzzleNumber } from "@/lib/daily";
 import type { LngLat } from "@/lib/geo";
 import { COUNTRIES, type Country, getCountry } from "./countries";
-import { type History, loadHistory, saveResult } from "./history";
+import { clearResult, type History, loadHistory, saveResult } from "./history";
 import { type GameState, guess, initialGame, start, tick, totalScore } from "./logic";
 
 type Puzzle = { key: string; number: number; countries: Country[] };
@@ -23,6 +23,8 @@ type GameStore = {
   start: () => void;
   pin: (lngLat: LngLat) => void;
   tick: () => void;
+  /** Dev only: wipe today's result and go back to the start screen. */
+  resetToday: () => void;
 };
 
 export const useGame = create<GameStore>()((set, get) => ({
@@ -38,6 +40,7 @@ export const useGame = create<GameStore>()((set, get) => ({
     const { game, puzzle } = get();
     set({ game: guess(game, lngLat, puzzle.countries, Date.now()) });
   },
+  resetToday: () => set({ game: initialGame, history: clearResult(get().puzzle.key) }),
   tick: () => {
     const { game, puzzle } = get();
     const next = tick(game, puzzle.countries, Date.now());

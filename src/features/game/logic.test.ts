@@ -16,6 +16,7 @@ const country = (id: string, lngLat: [number, number]): Country => ({
   name: { en: id, fr: id },
   capital: { en: id, fr: id },
   lngLat,
+  capitalWikidata: null,
   areaKm2: 500_000,
 });
 const PUZZLE = [country("A", [2.35, 48.86]), country("B", [13.4, 52.52])];
@@ -32,15 +33,21 @@ describe("game logic", () => {
     const playing = tick(start(0), PUZZLE, COUNTDOWN_MS);
     const s = guess(playing, [2.35, 48.86], PUZZLE, COUNTDOWN_MS + 1000);
     expect(s.phase).toBe("reveal");
-    expect(s.guesses[0]).toMatchObject({ score: 1000 });
+    expect(s.guesses[0]).toMatchObject({ score: 1000, timeMs: 1000 });
     expect(s.endsAt).toBe(COUNTDOWN_MS + 1000 + REVEAL_MS);
+  });
+
+  it("takes points off slow answers", () => {
+    const playing = tick(start(0), PUZZLE, COUNTDOWN_MS);
+    const s = guess(playing, [2.35, 48.86], PUZZLE, COUNTDOWN_MS + ROUND_MS - 1);
+    expect(s.guesses[0]?.score).toBe(700);
   });
 
   it("gives 0 points when time runs out", () => {
     const playing = tick(start(0), PUZZLE, COUNTDOWN_MS);
     const s = tick(playing, PUZZLE, COUNTDOWN_MS + ROUND_MS);
     expect(s.phase).toBe("reveal");
-    expect(s.guesses[0]).toEqual({ lngLat: null, distanceKm: null, score: 0 });
+    expect(s.guesses[0]).toEqual({ lngLat: null, distanceKm: null, score: 0, timeMs: null });
   });
 
   it("ignores pins outside a running round (first click is final)", () => {

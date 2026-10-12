@@ -11,6 +11,7 @@
       "fr": "Kaboul"
     },
     "lngLat": [69.1813, 34.5186],
+    "capitalWikidata": "Q5838",
     "areaKm2": 652230
   },
   {
@@ -25,6 +26,7 @@
       "fr": "Luanda"
     },
     "lngLat": [13.2325, -8.8363],
+    "capitalWikidata": "Q3897",
     "areaKm2": 1246700
   },
   {
@@ -39,6 +41,7 @@
       "fr": "Tirana"
     },
     "lngLat": [19.8189, 41.3275],
+    "capitalWikidata": "Q19689",
     "areaKm2": 28748
   },
   {
@@ -53,6 +56,7 @@
       "fr": "Abou Dabi"
     },
     "lngLat": [54.3666, 24.4667],
+    "capitalWikidata": "Q1519",
     "areaKm2": 83600
   },
   {
@@ -67,6 +71,7 @@
       "fr": "Buenos Aires"
     },
     "lngLat": [-58.3995, -34.6006],
+    "capitalWikidata": "Q1486",
     "areaKm2": 2780400
   },
   {
@@ -81,6 +86,7 @@
       "fr": "Erevan"
     },
     "lngLat": [44.5116, 40.1831],
+    "capitalWikidata": "Q1953",
     "areaKm2": 29743
   },
   {
@@ -95,6 +101,7 @@
       "fr": "Canberra"
     },
     "lngLat": [149.129, -35.283],
+    "capitalWikidata": "Q3114",
     "areaKm2": 7692024
   },
   {
@@ -109,6 +116,7 @@
       "fr": "Vienne"
     },
     "lngLat": [16.3647, 48.202],
+    "capitalWikidata": "Q1741",
     "areaKm2": 83871
   },
   {
@@ -123,6 +131,7 @@
       "fr": "Bakou"
     },
     "lngLat": [49.8603, 40.3972],
+    "capitalWikidata": "Q9248",
     "areaKm2": 86600
   },
   {
@@ -137,6 +146,7 @@
       "fr": "Gitega"
     },
     "lngLat": [29.8436, -3.426],
+    "capitalWikidata": "Q167551",
     "areaKm2": 27834
   },
   {
@@ -151,6 +161,7 @@
       "fr": "Bruxelles"
     },
     "lngLat": [4.3314, 50.8353],
+    "capitalWikidata": "Q239",
     "areaKm2": 30528
   },
   {
@@ -165,6 +176,7 @@
       "fr": "Porto-Novo"
     },
     "lngLat": [2.6166, 6.4833],
+    "capitalWikidata": "Q3799",
     "areaKm2": 112622
   },
   {
@@ -179,6 +191,7 @@
       "fr": "Ouagadougou"
     },
     "lngLat": [-1.5267, 12.3723],
+    "capitalWikidata": "Q3777",
     "areaKm2": 272967
   },
   {
@@ -193,6 +206,7 @@
       "fr": "Dacca"
     },
     "lngLat": [90.4066, 23.725],
+    "capitalWikidata": "Q1354",
     "areaKm2": 147570
   },
   {
@@ -207,6 +221,7 @@
       "fr": "Sofia"
     },
     "lngLat": [23.3147, 42.6853],
+    "capitalWikidata": "Q472",
     "areaKm2": 110879
   },
   {
@@ -221,6 +236,7 @@
       "fr": "Nassau"
     },
     "lngLat": [-77.35, 25.0834],
+    "capitalWikidata": "Q2467",
     "areaKm2": 13943
   },
   {
@@ -235,6 +251,7 @@
       "fr": "Sarajevo"
     },
     "lngLat": [18.383, 43.85],
+    "capitalWikidata": "Q11194",
     "areaKm2": 51209
   },
   {
@@ -249,6 +266,7 @@
       "fr": "Minsk"
     },
     "lngLat": [27.5647, 53.9019],
+    "capitalWikidata": "Q2280",
     "areaKm2": 207600
   },
   {
@@ -263,6 +281,7 @@
       "fr": "Belmopan"
     },
     "lngLat": [-88.7671, 17.252],
+    "capitalWikidata": "Q3043",
     "areaKm2": 22966
   },
   {
@@ -277,6 +296,7 @@
       "fr": "Sucre"
     },
     "lngLat": [-65.2595, -19.041],
+    "capitalWikidata": "Q2907",
     "areaKm2": 1098581
   },
   {
@@ -291,6 +311,7 @@
       "fr": "Brasilia"
     },
     "lngLat": [-47.918, -15.7814],
+    "capitalWikidata": "Q2844",
     "areaKm2": 8515767
   },
   {
@@ -305,6 +326,7 @@
       "fr": "Bandar Seri Begawan"
     },
     "lngLat": [114.9333, 4.8833],
+    "capitalWikidata": "Q9279",
     "areaKm2": 5765
   },
   {
@@ -319,6 +341,7 @@
       "fr": "Thimphou"
     },
     "lngLat": [89.639, 27.473],
+    "capitalWikidata": "Q9270",
     "areaKm2": 38394
   },
   {
@@ -333,6 +356,7 @@
       "fr": "Gaborone"
     },
     "lngLat": [25.9119, -24.6463],
+    "capitalWikidata": "Q3919",
     "areaKm2": 582000
   },
   {
@@ -347,6 +371,7 @@
       "fr": "Bangui"
     },
     "lngLat": [18.5583, 4.3666],
+    "capitalWikidata": "Q3832",
     "areaKm2": 622984
   },
   {
@@ -361,6 +386,7 @@
       "fr": "Ottawa"
     },
     "lngLat": [-75.702, 45.4186],
+    "capitalWikidata": "Q1930",
     "areaKm2": 9984670
   },
   {
@@ -375,6 +401,7 @@
       "fr": "Berne"
     },
     "lngLat": [7.467, 46.9167],
+    "capitalWikidata": "Q70",
     "areaKm2": 41284
   },
   {
@@ -389,6 +416,7 @@
       "fr": "Santiago"
     },
     "lngLat": [-70.669, -33.4481],
+    "capitalWikidata": "Q2887",
     "areaKm2": 756102
   },
   {
@@ -403,6 +431,7 @@
       "fr": "Pékin"
     },
     "lngLat": [116.3863, 39.9308],
+    "capitalWikidata": "Q956",
     "areaKm2": 9706961
   },
   {
@@ -417,6 +446,7 @@
       "fr": "Yamoussoukro"
     },
     "lngLat": [-5.2755, 6.8184],
+    "capitalWikidata": "Q3768",
     "areaKm2": 322463
   },
   {
@@ -431,6 +461,7 @@
       "fr": "Yaoundé"
     },
     "lngLat": [11.5147, 3.8686],
+    "capitalWikidata": "Q3808",
     "areaKm2": 475442
   },
   {
@@ -445,6 +476,7 @@
       "fr": "Kinshasa"
     },
     "lngLat": [15.313, -4.3278],
+    "capitalWikidata": "Q3838",
     "areaKm2": 2344858
   },
   {
@@ -459,6 +491,7 @@
       "fr": "Brazzaville"
     },
     "lngLat": [15.2827, -4.2572],
+    "capitalWikidata": "Q3844",
     "areaKm2": 342000
   },
   {
@@ -473,6 +506,7 @@
       "fr": "Bogota"
     },
     "lngLat": [-74.0853, 4.5984],
+    "capitalWikidata": "Q2841",
     "areaKm2": 1141748
   },
   {
@@ -487,6 +521,7 @@
       "fr": "San José"
     },
     "lngLat": [-84.086, 9.937],
+    "capitalWikidata": "Q3070",
     "areaKm2": 51100
   },
   {
@@ -501,6 +536,7 @@
       "fr": "La Havane"
     },
     "lngLat": [-82.3661, 23.1339],
+    "capitalWikidata": "Q1563",
     "areaKm2": 109884
   },
   {
@@ -515,6 +551,7 @@
       "fr": "Nicosie"
     },
     "lngLat": [33.3666, 35.1667],
+    "capitalWikidata": "Q3856",
     "areaKm2": 9251
   },
   {
@@ -529,6 +566,7 @@
       "fr": "Prague"
     },
     "lngLat": [14.464, 50.0853],
+    "capitalWikidata": "Q1085",
     "areaKm2": 78865
   },
   {
@@ -543,6 +581,7 @@
       "fr": "Berlin"
     },
     "lngLat": [13.3996, 52.5238],
+    "capitalWikidata": "Q64",
     "areaKm2": 357114
   },
   {
@@ -557,6 +596,7 @@
       "fr": "Djibouti"
     },
     "lngLat": [43.148, 11.595],
+    "capitalWikidata": "Q3604",
     "areaKm2": 23200
   },
   {
@@ -571,6 +611,7 @@
       "fr": "Copenhague"
     },
     "lngLat": [12.5615, 55.6805],
+    "capitalWikidata": "Q1748",
     "areaKm2": 43094
   },
   {
@@ -585,6 +626,7 @@
       "fr": "Saint-Domingue"
     },
     "lngLat": [-69.902, 18.472],
+    "capitalWikidata": "Q34820",
     "areaKm2": 48671
   },
   {
@@ -599,6 +641,7 @@
       "fr": "Alger"
     },
     "lngLat": [3.0486, 36.765],
+    "capitalWikidata": "Q3561",
     "areaKm2": 2381741
   },
   {
@@ -613,6 +656,7 @@
       "fr": "Quito"
     },
     "lngLat": [-78.502, -0.213],
+    "capitalWikidata": "Q2900",
     "areaKm2": 276841
   },
   {
@@ -627,6 +671,7 @@
       "fr": "Le Caire"
     },
     "lngLat": [31.248, 30.0519],
+    "capitalWikidata": "Q85",
     "areaKm2": 1002450
   },
   {
@@ -641,6 +686,7 @@
       "fr": "Asmara"
     },
     "lngLat": [38.9333, 15.3333],
+    "capitalWikidata": "Q3642",
     "areaKm2": 117600
   },
   {
@@ -655,6 +701,7 @@
       "fr": "Madrid"
     },
     "lngLat": [-3.6853, 40.402],
+    "capitalWikidata": "Q2807",
     "areaKm2": 505992
   },
   {
@@ -669,6 +716,7 @@
       "fr": "Tallinn"
     },
     "lngLat": [24.728, 59.4339],
+    "capitalWikidata": "Q1770",
     "areaKm2": 45227
   },
   {
@@ -683,6 +731,7 @@
       "fr": "Addis-Abeba"
     },
     "lngLat": [38.6981, 9.0353],
+    "capitalWikidata": "Q3624",
     "areaKm2": 1104300
   },
   {
@@ -697,6 +746,7 @@
       "fr": "Helsinki"
     },
     "lngLat": [24.9322, 60.1775],
+    "capitalWikidata": "Q1757",
     "areaKm2": 338424
   },
   {
@@ -711,6 +761,7 @@
       "fr": "Suva"
     },
     "lngLat": [178.4417, -18.133],
+    "capitalWikidata": "Q38807",
     "areaKm2": 18272
   },
   {
@@ -725,6 +776,7 @@
       "fr": "Paris"
     },
     "lngLat": [2.3314, 48.8686],
+    "capitalWikidata": "Q90",
     "areaKm2": 551695
   },
   {
@@ -739,6 +791,7 @@
       "fr": "Libreville"
     },
     "lngLat": [9.458, 0.3854],
+    "capitalWikidata": "Q3825",
     "areaKm2": 267668
   },
   {
@@ -753,6 +806,7 @@
       "fr": "Londres"
     },
     "lngLat": [-0.1187, 51.5019],
+    "capitalWikidata": "Q84",
     "areaKm2": 242900
   },
   {
@@ -767,6 +821,7 @@
       "fr": "Tbilissi"
     },
     "lngLat": [44.7888, 41.727],
+    "capitalWikidata": "Q994",
     "areaKm2": 69700
   },
   {
@@ -781,6 +836,7 @@
       "fr": "Accra"
     },
     "lngLat": [-0.2187, 5.552],
+    "capitalWikidata": "Q3761",
     "areaKm2": 238533
   },
   {
@@ -795,6 +851,7 @@
       "fr": "Conakry"
     },
     "lngLat": [-13.6822, 9.5335],
+    "capitalWikidata": "Q3733",
     "areaKm2": 245857
   },
   {
@@ -809,6 +866,7 @@
       "fr": "Banjul"
     },
     "lngLat": [-16.5917, 13.4539],
+    "capitalWikidata": "Q3726",
     "areaKm2": 10689
   },
   {
@@ -823,6 +881,7 @@
       "fr": "Bissau"
     },
     "lngLat": [-15.5984, 11.865],
+    "capitalWikidata": "Q3739",
     "areaKm2": 36125
   },
   {
@@ -837,6 +896,7 @@
       "fr": "Malabo"
     },
     "lngLat": [8.7833, 3.75],
+    "capitalWikidata": "Q3818",
     "areaKm2": 28051
   },
   {
@@ -851,6 +911,7 @@
       "fr": "Athènes"
     },
     "lngLat": [23.7314, 37.9853],
+    "capitalWikidata": "Q1524",
     "areaKm2": 131990
   },
   {
@@ -865,6 +926,7 @@
       "fr": "Guatemala-Ville"
     },
     "lngLat": [-90.5289, 14.6231],
+    "capitalWikidata": "Q1555",
     "areaKm2": 108889
   },
   {
@@ -879,6 +941,7 @@
       "fr": "Georgetown"
     },
     "lngLat": [-58.167, 6.802],
+    "capitalWikidata": "Q10717",
     "areaKm2": 214969
   },
   {
@@ -893,6 +956,7 @@
       "fr": "Tegucigalpa"
     },
     "lngLat": [-87.2195, 14.104],
+    "capitalWikidata": "Q3238",
     "areaKm2": 112492
   },
   {
@@ -907,6 +971,7 @@
       "fr": "Zagreb"
     },
     "lngLat": [16, 45.8],
+    "capitalWikidata": "Q1435",
     "areaKm2": 56594
   },
   {
@@ -921,6 +986,7 @@
       "fr": "Port-au-Prince"
     },
     "lngLat": [-72.338, 18.543],
+    "capitalWikidata": "Q34261",
     "areaKm2": 27750
   },
   {
@@ -935,6 +1001,7 @@
       "fr": "Budapest"
     },
     "lngLat": [19.0814, 47.502],
+    "capitalWikidata": "Q1781",
     "areaKm2": 93028
   },
   {
@@ -949,6 +1016,7 @@
       "fr": "Jakarta"
     },
     "lngLat": [106.8275, -6.1725],
+    "capitalWikidata": "Q3630",
     "areaKm2": 1904569
   },
   {
@@ -963,6 +1031,7 @@
       "fr": "New Delhi"
     },
     "lngLat": [77.2, 28.6],
+    "capitalWikidata": "Q987",
     "areaKm2": 3287590
   },
   {
@@ -977,6 +1046,7 @@
       "fr": "Dublin"
     },
     "lngLat": [-6.2509, 53.335],
+    "capitalWikidata": "Q1761",
     "areaKm2": 70273
   },
   {
@@ -991,6 +1061,7 @@
       "fr": "Téhéran"
     },
     "lngLat": [51.4224, 35.6739],
+    "capitalWikidata": "Q3616",
     "areaKm2": 1648195
   },
   {
@@ -1005,6 +1076,7 @@
       "fr": "Bagdad"
     },
     "lngLat": [44.3919, 33.3406],
+    "capitalWikidata": "Q1530",
     "areaKm2": 438317
   },
   {
@@ -1019,6 +1091,7 @@
       "fr": "Reykjavik"
     },
     "lngLat": [-21.95, 64.15],
+    "capitalWikidata": "Q1764",
     "areaKm2": 103000
   },
   {
@@ -1033,6 +1106,7 @@
       "fr": "Jérusalem"
     },
     "lngLat": [35.2066, 31.7784],
+    "capitalWikidata": "Q1218",
     "areaKm2": 20770
   },
   {
@@ -1047,6 +1121,7 @@
       "fr": "Rome"
     },
     "lngLat": [12.4813, 41.8979],
+    "capitalWikidata": "Q220",
     "areaKm2": 301336
   },
   {
@@ -1061,6 +1136,7 @@
       "fr": "Kingston"
     },
     "lngLat": [-76.7674, 17.9771],
+    "capitalWikidata": "Q34692",
     "areaKm2": 10991
   },
   {
@@ -1075,6 +1151,7 @@
       "fr": "Amman"
     },
     "lngLat": [35.9314, 31.952],
+    "capitalWikidata": "Q3805",
     "areaKm2": 89342
   },
   {
@@ -1089,6 +1166,7 @@
       "fr": "Tokyo"
     },
     "lngLat": [139.7495, 35.687],
+    "capitalWikidata": "Q1490",
     "areaKm2": 377930
   },
   {
@@ -1103,6 +1181,7 @@
       "fr": "Noursoultan"
     },
     "lngLat": [71.4278, 51.1811],
+    "capitalWikidata": "Q1520",
     "areaKm2": 2724900
   },
   {
@@ -1117,6 +1196,7 @@
       "fr": "Nairobi"
     },
     "lngLat": [36.8147, -1.2814],
+    "capitalWikidata": "Q3870",
     "areaKm2": 580367
   },
   {
@@ -1131,6 +1211,7 @@
       "fr": "Bichkek"
     },
     "lngLat": [74.5833, 42.875],
+    "capitalWikidata": "Q9361",
     "areaKm2": 199951
   },
   {
@@ -1145,6 +1226,7 @@
       "fr": "Phnom Penh"
     },
     "lngLat": [104.9147, 11.552],
+    "capitalWikidata": "Q1850",
     "areaKm2": 181035
   },
   {
@@ -1159,6 +1241,7 @@
       "fr": "Séoul"
     },
     "lngLat": [126.9978, 37.5683],
+    "capitalWikidata": "Q8684",
     "areaKm2": 100210
   },
   {
@@ -1173,6 +1256,7 @@
       "fr": "Koweït"
     },
     "lngLat": [47.9764, 29.3717],
+    "capitalWikidata": "Q35178",
     "areaKm2": 17818
   },
   {
@@ -1187,6 +1271,7 @@
       "fr": "Vientiane"
     },
     "lngLat": [102.6, 17.9667],
+    "capitalWikidata": "Q9326",
     "areaKm2": 236800
   },
   {
@@ -1201,6 +1286,7 @@
       "fr": "Beyrouth"
     },
     "lngLat": [35.5078, 33.8739],
+    "capitalWikidata": "Q3820",
     "areaKm2": 10452
   },
   {
@@ -1215,6 +1301,7 @@
       "fr": "Monrovia"
     },
     "lngLat": [-10.7997, 6.3146],
+    "capitalWikidata": "Q3748",
     "areaKm2": 111369
   },
   {
@@ -1229,6 +1316,7 @@
       "fr": "Tripoli"
     },
     "lngLat": [13.18, 32.8925],
+    "capitalWikidata": "Q3579",
     "areaKm2": 1759540
   },
   {
@@ -1243,6 +1331,7 @@
       "fr": "Colombo"
     },
     "lngLat": [79.8578, 6.932],
+    "capitalWikidata": "Q35381",
     "areaKm2": 65610
   },
   {
@@ -1257,6 +1346,7 @@
       "fr": "Maseru"
     },
     "lngLat": [27.4833, -29.3167],
+    "capitalWikidata": "Q3909",
     "areaKm2": 30355
   },
   {
@@ -1271,6 +1361,7 @@
       "fr": "Vilnius"
     },
     "lngLat": [25.3166, 54.6834],
+    "capitalWikidata": "Q216",
     "areaKm2": 65300
   },
   {
@@ -1285,6 +1376,7 @@
       "fr": "Luxembourg"
     },
     "lngLat": [6.13, 49.6117],
+    "capitalWikidata": "Q1842",
     "areaKm2": 2586
   },
   {
@@ -1299,6 +1391,7 @@
       "fr": "Riga"
     },
     "lngLat": [24.1, 56.95],
+    "capitalWikidata": "Q1773",
     "areaKm2": 64559
   },
   {
@@ -1313,6 +1406,7 @@
       "fr": "Rabat"
     },
     "lngLat": [-6.8364, 34.0253],
+    "capitalWikidata": "Q3551",
     "areaKm2": 446550
   },
   {
@@ -1327,6 +1421,7 @@
       "fr": "Chișinău"
     },
     "lngLat": [28.8577, 47.005],
+    "capitalWikidata": "Q21197",
     "areaKm2": 33846
   },
   {
@@ -1341,6 +1436,7 @@
       "fr": "Antananarivo"
     },
     "lngLat": [47.5147, -18.9147],
+    "capitalWikidata": "Q3915",
     "areaKm2": 587041
   },
   {
@@ -1355,6 +1451,7 @@
       "fr": "Mexico"
     },
     "lngLat": [-99.1329, 19.4444],
+    "capitalWikidata": "Q1489",
     "areaKm2": 1964375
   },
   {
@@ -1369,6 +1466,7 @@
       "fr": "Skopje"
     },
     "lngLat": [21.4335, 42],
+    "capitalWikidata": "Q384",
     "areaKm2": 25713
   },
   {
@@ -1383,6 +1481,7 @@
       "fr": "Bamako"
     },
     "lngLat": [-8.002, 12.652],
+    "capitalWikidata": "Q3703",
     "areaKm2": 1240192
   },
   {
@@ -1397,6 +1496,7 @@
       "fr": "Naypyidaw"
     },
     "lngLat": [96.1167, 19.7685],
+    "capitalWikidata": "Q37400",
     "areaKm2": 676578
   },
   {
@@ -1411,6 +1511,7 @@
       "fr": "Podgorica"
     },
     "lngLat": [19.2663, 42.466],
+    "capitalWikidata": "Q23564",
     "areaKm2": 13812
   },
   {
@@ -1425,6 +1526,7 @@
       "fr": "Oulan-Bator"
     },
     "lngLat": [106.9147, 47.9186],
+    "capitalWikidata": "Q23430",
     "areaKm2": 1564110
   },
   {
@@ -1439,6 +1541,7 @@
       "fr": "Maputo"
     },
     "lngLat": [32.5872, -25.9533],
+    "capitalWikidata": "Q3889",
     "areaKm2": 801590
   },
   {
@@ -1453,6 +1556,7 @@
       "fr": "Nouakchott"
     },
     "lngLat": [-15.9753, 18.0864],
+    "capitalWikidata": "Q3688",
     "areaKm2": 1030700
   },
   {
@@ -1467,6 +1571,7 @@
       "fr": "Lilongwe"
     },
     "lngLat": [33.7833, -13.9833],
+    "capitalWikidata": "Q3876",
     "areaKm2": 118484
   },
   {
@@ -1481,6 +1586,7 @@
       "fr": "Kuala Lumpur"
     },
     "lngLat": [101.698, 3.1686],
+    "capitalWikidata": "Q1865",
     "areaKm2": 330803
   },
   {
@@ -1495,6 +1601,7 @@
       "fr": "Windhoek"
     },
     "lngLat": [17.0835, -22.57],
+    "capitalWikidata": "Q3935",
     "areaKm2": 825615
   },
   {
@@ -1509,6 +1616,7 @@
       "fr": "Niamey"
     },
     "lngLat": [2.1147, 13.5187],
+    "capitalWikidata": "Q3674",
     "areaKm2": 1267000
   },
   {
@@ -1523,6 +1631,7 @@
       "fr": "Abuja"
     },
     "lngLat": [7.5314, 9.0853],
+    "capitalWikidata": "Q3787",
     "areaKm2": 923768
   },
   {
@@ -1537,6 +1646,7 @@
       "fr": "Managua"
     },
     "lngLat": [-86.2704, 12.155],
+    "capitalWikidata": "Q3274",
     "areaKm2": 130373
   },
   {
@@ -1551,6 +1661,7 @@
       "fr": "Amsterdam"
     },
     "lngLat": [4.9147, 52.3519],
+    "capitalWikidata": "Q727",
     "areaKm2": 41850
   },
   {
@@ -1565,6 +1676,7 @@
       "fr": "Oslo"
     },
     "lngLat": [10.748, 59.9186],
+    "capitalWikidata": "Q585",
     "areaKm2": 323802
   },
   {
@@ -1579,6 +1691,7 @@
       "fr": "Katmandou"
     },
     "lngLat": [85.3147, 27.7186],
+    "capitalWikidata": "Q3037",
     "areaKm2": 147181
   },
   {
@@ -1593,6 +1706,7 @@
       "fr": "Wellington"
     },
     "lngLat": [174.7833, -41.3],
+    "capitalWikidata": "Q23661",
     "areaKm2": 270467
   },
   {
@@ -1607,6 +1721,7 @@
       "fr": "Mascate"
     },
     "lngLat": [58.5933, 23.6133],
+    "capitalWikidata": "Q3826",
     "areaKm2": 309500
   },
   {
@@ -1621,6 +1736,7 @@
       "fr": "Islamabad"
     },
     "lngLat": [73.1647, 33.7019],
+    "capitalWikidata": "Q1362",
     "areaKm2": 881912
   },
   {
@@ -1635,6 +1751,7 @@
       "fr": "Panama"
     },
     "lngLat": [-79.535, 8.97],
+    "capitalWikidata": "Q3306",
     "areaKm2": 75417
   },
   {
@@ -1649,6 +1766,7 @@
       "fr": "Lima"
     },
     "lngLat": [-77.052, -12.0461],
+    "capitalWikidata": "Q2868",
     "areaKm2": 1285216
   },
   {
@@ -1663,6 +1781,7 @@
       "fr": "Manille"
     },
     "lngLat": [120.9803, 14.6061],
+    "capitalWikidata": "Q1461",
     "areaKm2": 342353
   },
   {
@@ -1677,6 +1796,7 @@
       "fr": "Port Moresby"
     },
     "lngLat": [147.1925, -9.4647],
+    "capitalWikidata": "Q36526",
     "areaKm2": 462840
   },
   {
@@ -1691,6 +1811,7 @@
       "fr": "Varsovie"
     },
     "lngLat": [20.9981, 52.2519],
+    "capitalWikidata": "Q270",
     "areaKm2": 312679
   },
   {
@@ -1705,6 +1826,7 @@
       "fr": "Pyongyang"
     },
     "lngLat": [125.7527, 39.0214],
+    "capitalWikidata": "Q18808",
     "areaKm2": 120538
   },
   {
@@ -1719,6 +1841,7 @@
       "fr": "Lisbonne"
     },
     "lngLat": [-9.1468, 38.7247],
+    "capitalWikidata": "Q597",
     "areaKm2": 92090
   },
   {
@@ -1733,6 +1856,7 @@
       "fr": "Asuncion"
     },
     "lngLat": [-57.6435, -25.2945],
+    "capitalWikidata": "Q2933",
     "areaKm2": 406752
   },
   {
@@ -1747,6 +1871,7 @@
       "fr": "Doha"
     },
     "lngLat": [51.533, 25.2866],
+    "capitalWikidata": "Q3861",
     "areaKm2": 11586
   },
   {
@@ -1761,6 +1886,7 @@
       "fr": "Bucarest"
     },
     "lngLat": [26.098, 44.4353],
+    "capitalWikidata": "Q19660",
     "areaKm2": 238391
   },
   {
@@ -1775,6 +1901,7 @@
       "fr": "Moscou"
     },
     "lngLat": [37.6136, 55.7541],
+    "capitalWikidata": "Q649",
     "areaKm2": 17098242
   },
   {
@@ -1789,6 +1916,7 @@
       "fr": "Kigali"
     },
     "lngLat": [30.0586, -1.9516],
+    "capitalWikidata": "Q3859",
     "areaKm2": 26338
   },
   {
@@ -1803,6 +1931,7 @@
       "fr": "Riyad"
     },
     "lngLat": [46.7708, 24.6428],
+    "capitalWikidata": "Q3692",
     "areaKm2": 2149690
   },
   {
@@ -1817,6 +1946,7 @@
       "fr": "Khartoum"
     },
     "lngLat": [32.5322, 15.59],
+    "capitalWikidata": "Q1963",
     "areaKm2": 1886068
   },
   {
@@ -1831,6 +1961,7 @@
       "fr": "Dakar"
     },
     "lngLat": [-17.4751, 14.7178],
+    "capitalWikidata": "Q3718",
     "areaKm2": 196722
   },
   {
@@ -1845,6 +1976,7 @@
       "fr": "Honiara"
     },
     "lngLat": [159.9498, -9.438],
+    "capitalWikidata": "Q40921",
     "areaKm2": 28896
   },
   {
@@ -1859,6 +1991,7 @@
       "fr": "Freetown"
     },
     "lngLat": [-13.2362, 8.472],
+    "capitalWikidata": "Q3780",
     "areaKm2": 71740
   },
   {
@@ -1873,6 +2006,7 @@
       "fr": "San Salvador"
     },
     "lngLat": [-89.205, 13.7119],
+    "capitalWikidata": "Q3110",
     "areaKm2": 21041
   },
   {
@@ -1887,6 +2021,7 @@
       "fr": "Mogadiscio"
     },
     "lngLat": [45.3647, 2.0686],
+    "capitalWikidata": "Q2449",
     "areaKm2": 637657
   },
   {
@@ -1901,6 +2036,7 @@
       "fr": "Belgrade"
     },
     "lngLat": [20.466, 44.8206],
+    "capitalWikidata": "Q3711",
     "areaKm2": 88361
   },
   {
@@ -1915,6 +2051,7 @@
       "fr": "Djouba"
     },
     "lngLat": [31.58, 4.83],
+    "capitalWikidata": "Q1947",
     "areaKm2": 619745
   },
   {
@@ -1929,6 +2066,7 @@
       "fr": "Paramaribo"
     },
     "lngLat": [-55.167, 5.835],
+    "capitalWikidata": "Q3001",
     "areaKm2": 163820
   },
   {
@@ -1943,6 +2081,7 @@
       "fr": "Bratislava"
     },
     "lngLat": [17.117, 48.15],
+    "capitalWikidata": "Q1780",
     "areaKm2": 49037
   },
   {
@@ -1957,6 +2096,7 @@
       "fr": "Ljubljana"
     },
     "lngLat": [14.515, 46.0553],
+    "capitalWikidata": "Q437",
     "areaKm2": 20273
   },
   {
@@ -1971,6 +2111,7 @@
       "fr": "Stockholm"
     },
     "lngLat": [18.0954, 59.3527],
+    "capitalWikidata": "Q1754",
     "areaKm2": 450295
   },
   {
@@ -1985,6 +2126,7 @@
       "fr": "Lobamba"
     },
     "lngLat": [31.2, -26.4667],
+    "capitalWikidata": "Q101418",
     "areaKm2": 17364
   },
   {
@@ -1999,6 +2141,7 @@
       "fr": "Damas"
     },
     "lngLat": [36.2981, 33.502],
+    "capitalWikidata": "Q3766",
     "areaKm2": 185180
   },
   {
@@ -2013,6 +2156,7 @@
       "fr": "N'Djaména"
     },
     "lngLat": [15.0472, 12.115],
+    "capitalWikidata": "Q3659",
     "areaKm2": 1284000
   },
   {
@@ -2027,6 +2171,7 @@
       "fr": "Lomé"
     },
     "lngLat": [1.2208, 6.1339],
+    "capitalWikidata": "Q3792",
     "areaKm2": 56785
   },
   {
@@ -2041,6 +2186,7 @@
       "fr": "Bangkok"
     },
     "lngLat": [100.5147, 13.7519],
+    "capitalWikidata": "Q1861",
     "areaKm2": 513120
   },
   {
@@ -2055,6 +2201,7 @@
       "fr": "Douchanbé"
     },
     "lngLat": [68.7739, 38.56],
+    "capitalWikidata": "Q9365",
     "areaKm2": 143100
   },
   {
@@ -2069,6 +2216,7 @@
       "fr": "Achgabat"
     },
     "lngLat": [58.3833, 37.95],
+    "capitalWikidata": "Q23438",
     "areaKm2": 488100
   },
   {
@@ -2083,6 +2231,7 @@
       "fr": "Dili"
     },
     "lngLat": [125.5795, -8.5594],
+    "capitalWikidata": "Q9310",
     "areaKm2": 14874
   },
   {
@@ -2097,6 +2246,7 @@
       "fr": "Port-d'Espagne"
     },
     "lngLat": [-61.517, 10.652],
+    "capitalWikidata": "Q39178",
     "areaKm2": 5130
   },
   {
@@ -2111,6 +2261,7 @@
       "fr": "Tunis"
     },
     "lngLat": [10.1797, 36.8028],
+    "capitalWikidata": "Q3572",
     "areaKm2": 163610
   },
   {
@@ -2125,6 +2276,7 @@
       "fr": "Ankara"
     },
     "lngLat": [32.8624, 39.9292],
+    "capitalWikidata": "Q3640",
     "areaKm2": 783562
   },
   {
@@ -2139,6 +2291,7 @@
       "fr": "Dodoma"
     },
     "lngLat": [35.75, -6.1833],
+    "capitalWikidata": "Q3866",
     "areaKm2": 945087
   },
   {
@@ -2153,6 +2306,7 @@
       "fr": "Kampala"
     },
     "lngLat": [32.5814, 0.3186],
+    "capitalWikidata": "Q3894",
     "areaKm2": 241550
   },
   {
@@ -2167,6 +2321,7 @@
       "fr": "Kiev"
     },
     "lngLat": [30.5147, 50.4353],
+    "capitalWikidata": "Q1899",
     "areaKm2": 603500
   },
   {
@@ -2181,6 +2336,7 @@
       "fr": "Montevideo"
     },
     "lngLat": [-56.173, -34.8561],
+    "capitalWikidata": "Q1335",
     "areaKm2": 181034
   },
   {
@@ -2195,6 +2351,7 @@
       "fr": "Washington"
     },
     "lngLat": [-77.0114, 38.9015],
+    "capitalWikidata": "Q61",
     "areaKm2": 9372610
   },
   {
@@ -2209,6 +2366,7 @@
       "fr": "Tachkent"
     },
     "lngLat": [69.293, 41.3136],
+    "capitalWikidata": "Q269",
     "areaKm2": 447400
   },
   {
@@ -2223,6 +2381,7 @@
       "fr": "Caracas"
     },
     "lngLat": [-66.919, 10.5029],
+    "capitalWikidata": "Q1533",
     "areaKm2": 916445
   },
   {
@@ -2237,6 +2396,7 @@
       "fr": "Hanoï"
     },
     "lngLat": [105.8481, 21.0353],
+    "capitalWikidata": "Q1858",
     "areaKm2": 331212
   },
   {
@@ -2251,6 +2411,7 @@
       "fr": "Port-Vila"
     },
     "lngLat": [168.3166, -17.7334],
+    "capitalWikidata": "Q37806",
     "areaKm2": 12189
   },
   {
@@ -2265,6 +2426,7 @@
       "fr": "Sanaa"
     },
     "lngLat": [44.2046, 15.3567],
+    "capitalWikidata": "Q2471",
     "areaKm2": 527968
   },
   {
@@ -2279,6 +2441,7 @@
       "fr": "Pretoria"
     },
     "lngLat": [28.2275, -25.705],
+    "capitalWikidata": "Q3926",
     "areaKm2": 1221037
   },
   {
@@ -2293,6 +2456,7 @@
       "fr": "Lusaka"
     },
     "lngLat": [28.2814, -15.4147],
+    "capitalWikidata": "Q3881",
     "areaKm2": 752612
   },
   {
@@ -2307,6 +2471,7 @@
       "fr": "Harare"
     },
     "lngLat": [31.0428, -17.8158],
+    "capitalWikidata": "Q3921",
     "areaKm2": 390757
   }
 ]

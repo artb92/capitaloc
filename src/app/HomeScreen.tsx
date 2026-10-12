@@ -5,7 +5,7 @@ export function HomeScreen({ onStart }: { onStart: () => void }) {
   const { t } = useI18n();
   return (
     <Card>
-      <p className="text-center font-semibold text-xl">{t.tagline}</p>
+      <p className="text-center font-display font-bold text-2xl tracking-tight">{t.tagline}</p>
       <h2 className="mt-5 font-medium text-slate-500 text-sm uppercase tracking-wide">
         {t.howToPlay}
       </h2>
@@ -17,7 +17,7 @@ export function HomeScreen({ onStart }: { onStart: () => void }) {
       <button
         type="button"
         onClick={onStart}
-        className="mt-6 w-full rounded-xl bg-rose-600 py-3 font-semibold text-lg text-white shadow transition hover:bg-rose-700 focus-visible:outline-2 focus-visible:outline-rose-600 focus-visible:outline-offset-2"
+        className="mt-6 w-full rounded-xl bg-gradient-to-r from-violet-600 to-rose-500 py-3 font-display font-bold text-lg text-white shadow-lg shadow-rose-500/25 transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-rose-600 focus-visible:outline-offset-2"
       >
         {t.start}
       </button>

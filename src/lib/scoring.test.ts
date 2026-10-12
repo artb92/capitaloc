@@ -1,4 +1,10 @@
-import { halfScoreDistanceKm, MAX_ROUND_SCORE, roundScore } from "./scoring";
+import {
+  halfScoreDistanceKm,
+  MAX_ROUND_SCORE,
+  roundScore,
+  SLOWEST_FACTOR,
+  speedFactor,
+} from "./scoring";
 
 const BELGIUM = 30_528;
 const RUSSIA = 17_098_242;
@@ -35,5 +41,18 @@ describe("scoring", () => {
       expect(s).toBeLessThanOrEqual(last);
       last = s;
     }
+  });
+});
+
+describe("speedFactor", () => {
+  it("keeps full points for quick answers", () => {
+    expect(speedFactor(0, 5000)).toBe(1);
+    expect(speedFactor(1000, 5000)).toBe(1);
+  });
+
+  it("slides down to the slowest factor at the end of the round", () => {
+    expect(speedFactor(3000, 5000)).toBeCloseTo(0.85);
+    expect(speedFactor(5000, 5000)).toBeCloseTo(SLOWEST_FACTOR);
+    expect(speedFactor(9000, 5000)).toBeCloseTo(SLOWEST_FACTOR);
   });
 });

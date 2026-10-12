@@ -24,6 +24,17 @@ export function saveResult(dateKey: string, result: DayResult): History {
   return next;
 }
 
+/** Dev only: forget one day's result so the puzzle can be replayed. */
+export function clearResult(dateKey: string): History {
+  const { [dateKey]: _, ...rest } = loadHistory();
+  try {
+    localStorage.setItem(KEY, JSON.stringify(rest));
+  } catch {
+    // Same as saveResult: storage may be unavailable.
+  }
+  return rest;
+}
+
 export type Stats = { played: number; streak: number; maxStreak: number; best: number };
 
 /** Streak counts consecutive days ending today (or yesterday, if today isn't played yet). */

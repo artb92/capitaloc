@@ -5,7 +5,10 @@ export function Countdown({ seconds }: { seconds: number }) {
   return (
     <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-slate-900/20">
       <p className="font-medium text-lg text-white drop-shadow">{t.getReady}</p>
-      <p key={seconds} className="animate-ping-once font-bold text-8xl text-white drop-shadow-lg">
+      <p
+        key={seconds}
+        className="animate-ping-once font-display font-extrabold text-8xl text-white drop-shadow-lg"
+      >
         {seconds}
       </p>
     </div>

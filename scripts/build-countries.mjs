@@ -45,6 +45,8 @@ const countries = worldCountries
       name: { en: c.name.common, fr: c.translations.fra.common },
       capital: { en: capital.NAME_EN ?? capital.NAME, fr: capital.NAME_FR ?? capital.NAME },
       lngLat: [round(capital.LONGITUDE), round(capital.LATITUDE)],
+      // Wikidata item of the capital, used at runtime to fetch its photo from Wikimedia Commons.
+      capitalWikidata: capital.WIKIDATAID ?? null,
       areaKm2: c.area,
     };
   })

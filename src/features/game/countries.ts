@@ -9,6 +9,8 @@ export type Country = {
   name: Record<Lang, string>;
   capital: Record<Lang, string>;
   lngLat: LngLat;
+  /** Wikidata item of the capital (e.g. "Q239" for Brussels), for its photo. */
+  capitalWikidata: string | null;
   areaKm2: number;
 };
 

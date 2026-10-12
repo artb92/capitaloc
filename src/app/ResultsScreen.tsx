@@ -20,7 +20,7 @@ export function ResultsScreen({ result, countries, stats, now }: Props) {
   return (
     <Card>
       <p className="text-center text-slate-500 text-sm uppercase tracking-wide">{t.total}</p>
-      <p className="text-center font-bold text-5xl">
+      <p className="text-center font-display font-extrabold text-5xl tracking-tight">
         {result.total.toLocaleString(lang)}
         <span className="font-medium text-2xl text-slate-400"> / {max.toLocaleString(lang)}</span>
       </p>

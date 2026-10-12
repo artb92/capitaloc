@@ -32,7 +32,7 @@ export function WorldMap({ focusId, focusInclude, pin, answer, onPick }: Props) 
           [w, s],
           [e, n],
         ],
-        { padding: { top: 150, bottom: 50, left: 40, right: 40 }, maxZoom: 5.5, duration: 600 },
+        { padding: { top: 260, bottom: 40, left: 40, right: 40 }, maxZoom: 5.5, duration: 0 }, // instant: a click would cancel an animated move mid-round
       );
     } else {
       map.flyTo({ ...WORLD_VIEW, duration: 600 });
@@ -81,7 +81,14 @@ export function WorldMap({ focusId, focusInclude, pin, answer, onPick }: Props) 
         source="countries"
         beforeId="borders"
         filter={["==", ["get", "id"], focusId ?? ""]}
-        paint={{ "fill-color": "#fecdd3" }}
+        paint={{ "fill-color": "#fb7185", "fill-opacity": 0.35 }}
+      />
+      <Layer
+        id="highlight-outline"
+        type="line"
+        source="countries"
+        filter={["==", ["get", "id"], focusId ?? ""]}
+        paint={{ "line-color": "#e11d48", "line-width": 2 }}
       />
       {line && (
         <Source id="guess-line" type="geojson" data={line}>

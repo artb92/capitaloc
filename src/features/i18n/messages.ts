@@ -8,7 +8,7 @@ const en = {
   rules: [
     "A country lights up on the map.",
     "You have 5 seconds to click where its capital is.",
-    "The closer your pin, the more points (up to 1,000). Distances count relative to the country's size.",
+    "The closer and faster your pin, the more points (up to 1,000). Distances count relative to the country's size.",
   ],
   start: "Start",
   getReady: "Get ready",
@@ -25,6 +25,8 @@ const en = {
   maxStreak: "Best streak",
   best: "Best score",
   noAnswer: "no answer",
+  capitalPhoto: "Photo of the capital",
+  seconds: (s: number) => `${s.toLocaleString("en", { maximumFractionDigits: 1 })} s`,
   language: "Language",
 };
 
@@ -37,7 +39,7 @@ const fr: Messages = {
   rules: [
     "Un pays s'allume sur la carte.",
     "Vous avez 5 secondes pour cliquer à l'emplacement de sa capitale.",
-    "Plus votre repère est proche, plus vous marquez de points (jusqu'à 1 000). La distance compte selon la taille du pays.",
+    "Plus votre repère est proche et rapide, plus vous marquez de points (jusqu'à 1 000). La distance compte selon la taille du pays.",
   ],
   start: "Commencer",
   getReady: "Préparez-vous",
@@ -54,6 +56,8 @@ const fr: Messages = {
   maxStreak: "Meilleure série",
   best: "Meilleur score",
   noAnswer: "pas de réponse",
+  capitalPhoto: "Photo de la capitale",
+  seconds: (s) => `${s.toLocaleString("fr", { maximumFractionDigits: 1 })} s`,
   language: "Langue",
 };
 

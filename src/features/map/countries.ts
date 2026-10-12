@@ -1,7 +1,7 @@
 import type { FeatureCollection, MultiPolygon, Polygon, Position } from "geojson";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
-import world from "world-atlas/countries-110m.json";
+import world from "world-atlas/countries-50m.json";
 
 export type CountryProps = { name: string; id: string };
 type CountryTopology = Topology<{ countries: GeometryCollection<CountryProps> }>;
@@ -35,7 +35,7 @@ const raw = feature(topology, topology.objects.countries) as FeatureCollection<
   CountryProps
 >;
 
-/** Natural Earth 1:110m country polygons, converted once at module load. */
+/** Natural Earth 1:50m country polygons, converted once at module load. */
 export const countries: FeatureCollection<Polygon | MultiPolygon, CountryProps> = {
   ...raw,
   features: raw.features.map((f) => ({
