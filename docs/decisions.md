@@ -23,3 +23,4 @@ One line per decision, newest last. Format: `YYYY-MM-DD: decision (why)`.
 - 2026-10-12: Relief is self-hosted per Arthur ("must load instantly", "polygon not matching"): shaded-relief WebP tiles z0–6 prebuilt into `public/relief` (~9 MB, ~1–2 kB per tile), today's close-ups preloaded on page open. Sea is a Natural Earth 50m vector drawn over the relief, so coasts match the country shapes; lakes and rivers from NE 10m.
 - 2026-10-12: Default base map is now satellite (NASA Blue Marble, cloud-free, public domain, self-hosted z0–6 WebP, ~17 MB) with country borders only, per Arthur ("clean satellite like Google"). The relief map stays available via the dev "Map:" switch.
 - 2026-10-12: Correct-capital marker is the logo's pin (white teardrop, amber star), dropping in like the guess pin, per Arthur.
+- 2026-10-12: Launch date moved to 2026-10-12, so today is Daily #1, per Arthur.

@@ -1,7 +1,7 @@
 import { hashString, mulberry32, sample } from "./random";
 
 /** Day #1 of Capitaloc. */
-export const LAUNCH_DATE = "2026-09-28";
+export const LAUNCH_DATE = "2026-10-12";
 export const ROUNDS_PER_DAY = 10;
 
 /** Local calendar date as YYYY-MM-DD, so the puzzle flips at the player's midnight. */

@@ -13,8 +13,8 @@ describe("daily", () => {
   });
 
   it("numbers puzzles from launch day", () => {
-    expect(puzzleNumber("2026-09-28")).toBe(1);
-    expect(puzzleNumber("2026-10-08")).toBe(11);
+    expect(puzzleNumber("2026-10-12")).toBe(1);
+    expect(puzzleNumber("2026-10-22")).toBe(11);
   });
 
   it("picks 10 distinct ids, stable per day and independent of input order", () => {
