@@ -61,10 +61,17 @@ export function guess(
   if (state.phase !== "playing" || !country || now < state.startsAt || now >= state.endsAt) {
     return state;
   }
-  const d = distanceKm(lngLat, country.lngLat);
   const timeMs = now - state.startsAt;
-  const score = Math.round(roundScore(d, country.areaKm2) * speedFactor(timeMs, ROUND_MS));
-  return reveal(state, { lngLat, distanceKm: d, score, timeMs }, now);
+  return reveal(state, { lngLat, ...scoreGuess(lngLat, country, timeMs), timeMs }, now);
+}
+
+/** Distance and points for a pin placed `timeMs` into the round. Also used to verify leaderboard entries. */
+export function scoreGuess(lngLat: LngLat, country: Country, timeMs: number) {
+  const d = distanceKm(lngLat, country.lngLat);
+  return {
+    distanceKm: d,
+    score: Math.round(roundScore(d, country.areaKm2) * speedFactor(timeMs, ROUND_MS)),
+  };
 }
 
 /** Advances timed phases once their deadline has passed. */

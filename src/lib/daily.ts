@@ -29,3 +29,8 @@ export function dailyPick(ids: readonly string[], key: string, count = ROUNDS_PE
   const sorted = [...ids].sort();
   return sample(sorted, count, mulberry32(hashString(`capitaloc:${key}`)));
 }
+
+/** The date key `n` days after `key` (negative goes back). */
+export function addDays(key: string, n: number): string {
+  return new Date(Date.parse(`${key}T00:00:00Z`) + n * 86_400_000).toISOString().slice(0, 10);
+}

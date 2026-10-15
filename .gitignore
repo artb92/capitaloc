@@ -6,3 +6,5 @@ coverage
 .vite
 .claude/settings.local.json
 *.tsbuildinfo
+supabase/functions/submit-score/handler.js
+supabase/.temp

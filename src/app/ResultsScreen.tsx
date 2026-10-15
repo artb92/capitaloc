@@ -2,12 +2,20 @@ import { useEffect, useState } from "react";
 import type { Country } from "@/features/game/countries";
 import type { DayResult, Stats } from "@/features/game/history";
 import { useI18n } from "@/features/i18n/useI18n";
+import { boardEnabled } from "@/features/leaderboard/client";
 import { MAX_ROUND_SCORE } from "@/lib/scoring";
 import { Card } from "./Card";
+import { Leaderboard } from "./Leaderboard";
 import { ScoreStrip } from "./ScoreStrip";
 import { tierColor } from "./tier";
 
-type Props = { result: DayResult; countries: Country[]; stats: Stats; now: number };
+type Props = {
+  day: string;
+  result: DayResult;
+  countries: Country[];
+  stats: Stats;
+  now: number;
+};
 
 function untilMidnight(now: number): string {
   const d = new Date(now);
@@ -38,7 +46,7 @@ function useCountUp(target: number, ms = 900): number {
   return value;
 }
 
-export function ResultsScreen({ result, countries, stats, now }: Props) {
+export function ResultsScreen({ day, result, countries, stats, now }: Props) {
   const { lang, t } = useI18n();
   const max = MAX_ROUND_SCORE * countries.length;
   const shown = useCountUp(result.total);
@@ -96,6 +104,7 @@ export function ResultsScreen({ result, countries, stats, now }: Props) {
           </div>
         ))}
       </dl>
+      {boardEnabled && <Leaderboard day={day} result={result} />}
       <p className="mt-5 text-center text-ink-500 text-sm">
         {t.comeBack} {t.nextIn(untilMidnight(now))}
       </p>
