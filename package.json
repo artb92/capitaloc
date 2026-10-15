@@ -20,7 +20,8 @@
     "data:countries": "node scripts/build-countries.mjs",
     "data:physical": "node scripts/build-physical.mjs",
     "data:relief": "node scripts/build-relief.mjs",
-    "data:satellite": "node scripts/build-satellite.mjs"
+    "data:satellite": "node scripts/build-satellite.mjs",
+    "build:function": "vite build --config vite.function.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",

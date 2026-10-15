@@ -1,4 +1,4 @@
-import { dailyPick, dateKey, daysBetween, puzzleNumber } from "./daily";
+import { addDays, dailyPick, dateKey, daysBetween, puzzleNumber } from "./daily";
 
 const IDS = Array.from({ length: 100 }, (_, i) => String(i).padStart(3, "0"));
 
@@ -10,6 +10,11 @@ describe("daily", () => {
   it("counts days across DST and year boundaries", () => {
     expect(daysBetween("2026-12-31", "2027-01-01")).toBe(1);
     expect(daysBetween("2026-03-28", "2026-03-30")).toBe(2);
+  });
+
+  it("adds days across month and year boundaries", () => {
+    expect(addDays("2026-12-31", 1)).toBe("2027-01-01");
+    expect(addDays("2026-10-01", -1)).toBe("2026-09-30");
   });
 
   it("numbers puzzles from launch day", () => {

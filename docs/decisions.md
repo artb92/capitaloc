@@ -24,3 +24,6 @@ One line per decision, newest last. Format: `YYYY-MM-DD: decision (why)`.
 - 2026-10-12: Default base map is now satellite (NASA Blue Marble, cloud-free, public domain, self-hosted z0–6 WebP, ~17 MB) with country borders only, per Arthur ("clean satellite like Google"). The relief map stays available via the dev "Map:" switch.
 - 2026-10-12: Correct-capital marker is the logo's pin (white teardrop, amber star), dropping in like the guess pin, per Arthur.
 - 2026-10-12: Launch date moved to 2026-10-12, so today is Daily #1, per Arthur.
+- 2026-10-15: Daily leaderboard per Arthur: Supabase (Postgres `scores` table + `submit-score` Edge Function) and Cloudflare Pages hosting. Opt-in name after the result; the server recomputes the score from the raw pins.
+- 2026-10-15: Board ranking: score, then lower total time (timed-out rounds count 5 s), then first to submit. Top 100 shown plus your own rank; past days browsable.
+- 2026-10-15: Leaderboard names: 2–16 letters/digits, duplicates allowed, small EN/FR blocklist. One entry per device per day (random id in localStorage). No IP rate limit yet; delete abusive rows in the Supabase table view.

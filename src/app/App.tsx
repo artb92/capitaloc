@@ -82,6 +82,7 @@ export function App() {
         {!running &&
           (today ? (
             <ResultsScreen
+              day={puzzle.key}
               result={today}
               countries={puzzle.countries}
               stats={computeStats(history, puzzle.key)}

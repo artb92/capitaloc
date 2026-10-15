@@ -1,0 +1,6 @@
+# Only what differs from Supabase defaults; used by `supabase db push` / `functions deploy`.
+project_id = "capitaloc"
+
+[functions.submit-score]
+# Public endpoint: the browser calls it with the publishable key, which isn't a JWT.
+verify_jwt = false

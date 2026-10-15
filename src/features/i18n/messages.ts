@@ -30,6 +30,17 @@ const en = {
   capitalPhoto: "Photo of the capital",
   seconds: (s: number) => `${s.toLocaleString("en", { maximumFractionDigits: 1 })} s`,
   language: "Language",
+  board: (n: number) => `Daily #${n} leaderboard`,
+  boardJoin: "Join today's leaderboard",
+  boardName: "Your name",
+  boardSubmit: "Join",
+  boardBadName: "Use 2 to 16 letters or digits, nothing offensive.",
+  boardDuplicate: "This device is already on today's leaderboard.",
+  boardError: "Couldn't reach the leaderboard. Try again.",
+  boardEmpty: "No one here yet.",
+  boardLoading: "Loading…",
+  prevDay: "Previous day",
+  nextDay: "Next day",
 };
 
 export type Messages = typeof en;
@@ -63,6 +74,17 @@ const fr: Messages = {
   capitalPhoto: "Photo de la capitale",
   seconds: (s) => `${s.toLocaleString("fr", { maximumFractionDigits: 1 })} s`,
   language: "Langue",
+  board: (n) => `Classement du défi n°${n}`,
+  boardJoin: "Rejoindre le classement du jour",
+  boardName: "Votre pseudo",
+  boardSubmit: "Valider",
+  boardBadName: "De 2 à 16 lettres ou chiffres, rien d'offensant.",
+  boardDuplicate: "Cet appareil figure déjà au classement du jour.",
+  boardError: "Impossible de joindre le classement. Réessayez.",
+  boardEmpty: "Personne pour l'instant.",
+  boardLoading: "Chargement…",
+  prevDay: "Jour précédent",
+  nextDay: "Jour suivant",
 };
 
 export const messages: Record<Lang, Messages> = { en, fr };
