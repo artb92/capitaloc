@@ -1,0 +1,6 @@
+// Cloudflare Workers static-assets deploy (Workers Builds runs `npx wrangler deploy` after `pnpm build`).
+{
+  "name": "capitaloc",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./dist" }
+}
