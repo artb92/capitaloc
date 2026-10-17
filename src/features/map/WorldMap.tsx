@@ -1,11 +1,20 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { FeatureCollection, LineString } from "geojson";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import { useEffect, useMemo, useRef } from "react";
 import { Layer, Map as MapLibre, type MapRef, Marker, Source } from "react-map-gl/maplibre";
 import type { LngLat } from "@/lib/geo";
 import { useBasemap } from "./basemap";
 import { countryBounds } from "./countries";
 import { HIGHLIGHT_ANCHOR, mapStyles } from "./mapStyle";
+
+// MapLibre finds its worker from a runtime-built URL that Vite can't see, so production
+// builds never emitted it and every GeoJSON layer (borders, highlight) failed to render.
+// Dynamic import keeps maplibre-gl in its own chunk, as react-map-gl does by default.
+const mapLib = import("maplibre-gl").then((m) => {
+  m.setWorkerUrl(workerUrl);
+  return m;
+});
 
 const WORLD_VIEW = { center: [10, 25] as [number, number], zoom: 1.2 };
 const ACCENT = "#f0a830";
@@ -77,6 +86,7 @@ export function WorldMap({ focusId, focusInclude, travelMs, pin, answer, onPick 
   return (
     <MapLibre
       ref={mapRef}
+      mapLib={mapLib}
       initialViewState={{
         longitude: WORLD_VIEW.center[0],
         latitude: WORLD_VIEW.center[1],
